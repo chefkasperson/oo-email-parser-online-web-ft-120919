@@ -5,12 +5,14 @@
 
 class EmailAddressParser
 
-    def initialize(string)
-        @string = string
+    attr_reader :emails
+
+    def initialize(emails)
+        @emails = emails
     end
 
     def parse
-        @string.split(/\, +|\ |\,/).uniq
+        emails.split(/\, +|\ /).uniq
     end
 
 
